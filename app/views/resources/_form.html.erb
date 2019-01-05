@@ -1,37 +1,65 @@
-<%= form_with(model: resource, local: true) do |form| %>
-  <% if resource.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(resource.errors.count, "error") %> prohibited this resource from being saved:</h2>
+<%= form_for @resource, :html => { :class => "form-horizontal resource" } do |f| %>
 
-      <ul>
-      <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @resource.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@resource.errors.count, "error") %> prohibited this resource from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @resource.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
+  <div class="form-group">
+    <%= f.label :url, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :url, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:url) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :memo, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :memo, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:memo) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :image, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:image) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :document, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :document, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:document) %>
+  </div>
+  <div class="form-group">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <%= f.collection_check_boxes :language_ids, 
+                                    Language.all, :id, :name do |cb| %>
+<% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                resources_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :memo %>
-    <%= form.text_area :memo %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
-  </div>
-
-  <div class="field">
-    <%= form.label :document %>
-    <%= form.text_field :document %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

@@ -1,5 +1,5 @@
-<h1>New Resource</h1>
-
-<%= render 'form', resource: @resource %>
-
-<%= link_to 'Back', resources_path %>
+<%- model_class = Resource -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>

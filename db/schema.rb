@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_05_140232) do
+ActiveRecord::Schema.define(version: 2019_01_05_162311) do
+
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "resource_languages", force: :cascade do |t|
+    t.integer "resource_id"
+    t.integer "language_id"
+  end
 
   create_table "resources", force: :cascade do |t|
     t.string "url"

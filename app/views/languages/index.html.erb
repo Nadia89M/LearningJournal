@@ -1,0 +1,6 @@
+<h1 align="center">Listing all languages</h1>
+<% @languages.each do |language| %>
+  <h4><%= language.name %></h4>
+  <%= link_to 'Show', language %>
+  <%= link_to 'Edit', edit_language_path(language) %>
+<% end %>

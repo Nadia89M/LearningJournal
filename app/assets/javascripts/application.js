@@ -14,6 +14,14 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-//= require jquery3
 //= require popper
 //= require bootstrap
+//= require twitter/bootstrap
+//= require jquery3
+$(document).ready(function(){
+    $('.navbar .dropdown').hover(function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
+    }, function() {
+        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+    });
+n})
