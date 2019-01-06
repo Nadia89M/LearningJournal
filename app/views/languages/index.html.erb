@@ -1,6 +1,11 @@
-<h1 align="center">Listing all languages</h1>
+<h1 align="center">Languages</h1>
 <% @languages.each do |language| %>
   <h4><%= language.name %></h4>
   <%= link_to 'Show', language %>
   <%= link_to 'Edit', edit_language_path(language) %>
 <% end %>
+<br>
+<br>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_resource_path,
+            :class => 'btn btn-primary' %>
