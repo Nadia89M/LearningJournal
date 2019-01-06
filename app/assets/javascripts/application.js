@@ -12,16 +12,60 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery3
+//= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 //= require popper
 //= require bootstrap
 //= require twitter/bootstrap
-//= require jquery3
-$(document).ready(function(){
-    $('.navbar .dropdown').hover(function() {
-        $(this).find('.dropdown-menu').first().stop(true, true).delay(250).slideDown();
-    }, function() {
-        $(this).find('.dropdown-menu').first().stop(true, true).delay(100).slideUp()
+
+$(document).ready(function() {
+  $(".navbar .dropdown").hover(
+    function() {
+      $(this)
+        .find(".dropdown-menu")
+        .first()
+        .stop(true, true)
+        .delay(250)
+        .slideDown();
+    },
+    function() {
+      $(this)
+        .find(".dropdown-menu")
+        .first()
+        .stop(true, true)
+        .delay(100)
+        .slideUp();
+    }
+  );
+
+  $("#search-item").keyup(function() {
+    var value = $(this)
+      .val()
+      .toLowerCase()
+      .trim();
+    var items = $(".resource-item");
+    items.each(function() {
+      var type = $(this)
+        .text()
+        .toLowerCase()
+        .trim();
+      if (!type.includes(value)) {
+        $(this)
+          .parent()
+          .addClass("remove");
+      } else {
+        $(this)
+          .parent()
+          .removeClass("remove");
+      }
     });
-n})
+  });
+});
+
+   $(document).ready( function() {
+       $("#search-item").focus(function(){
+        $(location).attr("href", "/resources");
+       });
+   });
