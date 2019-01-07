@@ -26,7 +26,7 @@
   <dd><% @resource.frameworks.each do |framework| %>
       <%= link_to framework.name, framework_path(framework) %>
       <% end %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:dbs) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:databases) %>:</strong></dt>
   <dd><% @resource.dbs.each do |db| %>
       <%= link_to db.name, db_path(db) %>
       <% end %></dd>

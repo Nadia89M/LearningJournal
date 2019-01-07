@@ -12,6 +12,9 @@
       <li class="nav-item">
         <%=link_to "Resources", resources_path, class: "nav-link"%>
       </li>
+      <li class="nav-item">
+        <%=link_to "Projects", projects_path, class: "nav-link"%>
+      </li>
       <li class="nav-item dropdown">
         <%=link_to "Languages", languages_path, class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", dataToggle: "dropdown", ariaHaspopup: "true", ariaExpanded: "false"  %>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -37,7 +40,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <%=link_to "Dbs", dbs_path, class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", dataToggle: "dropdown", ariaHaspopup: "true", ariaExpanded: "false"  %>
+        <%=link_to "DBs", dbs_path, class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", dataToggle: "dropdown", ariaHaspopup: "true", ariaExpanded: "false"  %>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <% Db.all.each do |db| %>
         <%= link_to db.name.capitalize, db_path(db), class: "dropdown-item" %>

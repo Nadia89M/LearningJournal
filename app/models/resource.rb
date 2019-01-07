@@ -1,4 +1,5 @@
 class Resource < ApplicationRecord
+  validates :project_id, presence: true 
   validates :name, presence: true 
   validates :url, presence: true
   validates :memo, presence: true, length: { minimum: 5 }
@@ -10,4 +11,5 @@ class Resource < ApplicationRecord
   has_many :frameworks, through: :resource_frameworks
   has_many :resource_dbs
   has_many :dbs, through: :resource_dbs
+  belongs_to :project
 end
