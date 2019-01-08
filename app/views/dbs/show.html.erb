@@ -1,5 +1,5 @@
 <h1><%= @db.name %></h1>
-<% if @db.resources.count != 0 %>
+<% if @db.resources.any? %>
   <h4 align="center">Resouces' containing <%= @db.name %></h4>
   <% @db.resources.each do |resource| %>
   <h4><%= resource.url %></h4>

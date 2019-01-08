@@ -1,5 +1,5 @@
 <h1><%= @framework.name %></h1>
-<% if @framework.resources.count != 0 %>
+<% if @framework.resources.any? %>
   <h4 align="center">Resouces' containing <%= @framework.name %></h4>
   <% @framework.resources.each do |resource| %>
   <h4><%= resource.url %></h4>

@@ -1,5 +1,5 @@
 <h1><%= @technology.name %></h1>
-<% if @technology.resources.count != 0 %>
+<% if @technology.resources.any? %>
   <h4 align="center">Resouces' containing <%= @technology.name %></h4>
   <% @technology.resources.each do |resource| %>
   <h4><%= resource.url %></h4>

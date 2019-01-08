@@ -1,5 +1,5 @@
 <h1><%= @language.name %></h1>
-<% if @language.resources.count != 0 %>
+<% if @language.resources.any? %>
   <h4 align="center">Resouces' containing <%= @language.name %></h4>
   <% @language.resources.each do |resource| %>
   <h4><%= resource.url %></h4>
