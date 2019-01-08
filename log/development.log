@@ -23947,3 +23947,32 @@ Processing by ResourcesController#new as HTML
 Completed 200 OK in 119ms (Views: 113.9ms | ActiveRecord: 2.0ms)
 
 
+Started GET "/resources/new" for 127.0.0.1 at 2019-01-08 14:07:47 +0000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/nadia/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by ResourcesController#new as HTML
+  Rendering resources/new.html.erb within layouts/application
+  [1m[36mLanguage Load (0.1ms)[0m  [1m[34mSELECT "languages".* FROM "languages"[0m
+  ↳ app/views/resources/_form.html.erb:56
+  [1m[36mTechnology Load (0.1ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies"[0m
+  ↳ app/views/resources/_form.html.erb:67
+  [1m[36mFramework Load (0.1ms)[0m  [1m[34mSELECT "frameworks".* FROM "frameworks"[0m
+  ↳ app/views/resources/_form.html.erb:78
+  [1m[36mDb Load (0.2ms)[0m  [1m[34mSELECT "dbs".* FROM "dbs"[0m
+  ↳ app/views/resources/_form.html.erb:89
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  ↳ app/views/resources/_form.html.erb:100
+  Rendered resources/_form.html.erb (135.6ms)
+  Rendered resources/new.html.erb within layouts/application (137.7ms)
+  [1m[36mCACHE Language Load (0.0ms)[0m  [1m[34mSELECT "languages".* FROM "languages"[0m
+  ↳ app/views/layouts/_navbar.html.erb:21
+  [1m[36mCACHE Technology Load (0.0ms)[0m  [1m[34mSELECT "technologies".* FROM "technologies"[0m
+  ↳ app/views/layouts/_navbar.html.erb:29
+  [1m[36mCACHE Framework Load (0.0ms)[0m  [1m[34mSELECT "frameworks".* FROM "frameworks"[0m
+  ↳ app/views/layouts/_navbar.html.erb:37
+  [1m[36mCACHE Db Load (0.0ms)[0m  [1m[34mSELECT "dbs".* FROM "dbs"[0m
+  ↳ app/views/layouts/_navbar.html.erb:45
+  Rendered layouts/_navbar.html.erb (5.4ms)
+Completed 200 OK in 470ms (Views: 447.4ms | ActiveRecord: 3.8ms)
+
+
