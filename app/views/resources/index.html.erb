@@ -5,19 +5,24 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:url) %></th>
       <th><%= model_class.human_attribute_name(:memo) %></th>
       <th><%= model_class.human_attribute_name(:image) %></th>
       <th><%= model_class.human_attribute_name(:document) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%= model_class.human_attribute_name(:languages) %></th>
+      <th><%= model_class.human_attribute_name(:technologies) %></th>
+      <th><%= model_class.human_attribute_name(:frameworks) %></th>
+      <th><%= model_class.human_attribute_name(:dbs) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @resources.each do |resource| %>
       <tr>
-        <td class="resource-item"><%= resource.url%></td>
+        <td class="resource-item"><%= resource.name%></td>
+        <td><%= resource.url%></td>
         <td><%= resource.memo %></td>
         <td><%= resource.image %></td>
         <td><%= resource.document %></td>
@@ -25,6 +30,15 @@
         <td><% resource.languages.each do |language| %>
         <%= link_to language.name, language_path(language) %>
         <% end %></td>
+        <td><% resource.technologies.each do |technology| %>
+          <%= link_to technology.name, technology_path(technology) %>
+          <% end %></td>
+        <td><% resource.frameworks.each do |framework| %>
+            <%= link_to framework.name, framework_path(framework) %>
+            <% end %></td>
+        <td><% resource.dbs.each do |db| %>
+            <%= link_to db.name, db_path(db) %>
+            <% end %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       resource_path(resource), :class => 'btn btn-default btn-xs' %>

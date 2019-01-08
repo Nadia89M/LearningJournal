@@ -1,7 +1,7 @@
-<h1><%= @language.name %></h1>
-<% if @language.resources.any? %>
-  <h4 align="center">Resouces' containing <%= @language.name %></h4>
-  <% @language.resources.each do |resource| %>
+<h1><%= @technology.name %></h1>
+<% if @technology.resources.any? %>
+  <h4 align="center">Resouces' containing <%= @technology.name %></h4>
+  <% @technology.resources.each do |resource| %>
   <h4><%= resource.url %></h4>
   <%= link_to 'Show', resource %>
   <%= link_to 'Edit', edit_resource_path(resource) %>
