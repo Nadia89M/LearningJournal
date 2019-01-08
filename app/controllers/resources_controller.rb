@@ -15,16 +15,19 @@ class ResourcesController < ApplicationController
   # GET /resources/new
   def new
     @resource = Resource.new
+    @projects = Project.all
   end
 
   # GET /resources/1/edit
   def edit
+    @projects = Project.all
   end
 
   # POST /resources
   # POST /resources.json
   def create
     @resource = Resource.new(resource_params)
+    @projects = Project.all
 
     respond_to do |format|
       if @resource.save
