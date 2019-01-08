@@ -4,12 +4,13 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dd><% @resource.images.each do |image| %>
+  <%= image_tag image, class: "img-show" %> <br />
+  <% end %></dd>
   <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
   <dd><%= @resource.url %></dd>
   <dt><strong><%= model_class.human_attribute_name(:memo) %>:</strong></dt>
   <dd><%= @resource.memo %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:image) %>:</strong></dt>
-  <dd><%= @resource.image %></dd>
   <dt><strong><%= model_class.human_attribute_name(:document) %>:</strong></dt>
   <dd><%= @resource.document %></dd>
     <dt><strong><%= model_class.human_attribute_name(:languages) %>:</strong></dt>

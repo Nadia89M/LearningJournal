@@ -42,6 +42,9 @@ gem "twitter-bootstrap-rails"
 # This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application.
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
+# This gem contains every available AWS service gem support. 
+gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

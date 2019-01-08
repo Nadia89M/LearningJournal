@@ -3,4 +3,5 @@ class Resource < ApplicationRecord
   validates :memo, presence: true, length: { minimum: 5 }
   has_many :resource_languages
   has_many :languages, through: :resource_languages
+  has_many_attached :images
 end
