@@ -8,7 +8,7 @@
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:start_date) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:updated) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -18,7 +18,7 @@
         <td><%= project.name %></td>
         <td><%= project.description %></td>
         <td><%= project.start_date %></td>
-        <td><%=time_ago_in_words(project.created_at) %></td>
+        <td><%=time_ago_in_words(project.updated_at) %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       project_path(project), :class => 'btn btn-default btn-xs' %>
