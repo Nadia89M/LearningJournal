@@ -19,3 +19,4 @@
 //= require popper
 //= require bootstrap
 //= require twitter/bootstrap
+//= require select2

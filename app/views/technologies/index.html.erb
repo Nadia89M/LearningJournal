@@ -1,0 +1,11 @@
+<h1 align="center">Technologies</h1>
+<% @technologies.each do |technology| %>
+  <h4><%= technology.name %></h4>
+  <%= link_to 'Show', technology %>
+  <%= link_to 'Edit', edit_technology_path(technology) %>
+<% end %>
+<br>
+<br>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_technology_path,
+            :class => 'btn btn-primary' %>

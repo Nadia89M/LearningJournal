@@ -15,16 +15,19 @@ class ResourcesController < ApplicationController
   # GET /resources/new
   def new
     @resource = Resource.new
+    @projects = Project.all
   end
 
   # GET /resources/1/edit
   def edit
+    @projects = Project.all
   end
 
   # POST /resources
   # POST /resources.json
   def create
     @resource = Resource.new(resource_params)
+    @projects = Project.all
 
     respond_to do |format|
       if @resource.save
@@ -75,6 +78,7 @@ class ResourcesController < ApplicationController
 
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_resource
       @resource = Resource.find(params[:id])
@@ -82,6 +86,6 @@ class ResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:resource).permit(:url, :memo, :image, :document, language_ids: [], images: [], documents: [])
+      params.require(:resource).permit(:name, :url, :memo, :image, :document, :project_id, language_ids: [], technology_ids: [], framework_ids: [], db_ids: [])
     end
 end

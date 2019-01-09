@@ -40,4 +40,8 @@ $(document).on("turbolinks:load", function() {
       }
     });
   });
+  $("#resource_project_id").select2();
 });
+
+
+
