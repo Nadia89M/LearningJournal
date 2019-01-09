@@ -8,7 +8,7 @@
       <th><%= model_class.human_attribute_name(:url) %></th>
       <th><%= model_class.human_attribute_name(:memo) %></th>
       <th><%= model_class.human_attribute_name(:images) %></th>
-      <th><%= model_class.human_attribute_name(:document) %></th>
+      <th><%= model_class.human_attribute_name(:documents) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%= model_class.human_attribute_name(:languages) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -22,7 +22,9 @@
         <td><% resource.images.each do |image| %>
           <%= image_tag image, class: "img-index" %> <br />
         <% end %></td>
-        <td><%= resource.document %></td>
+        <td><% resource.documents.each do |document| %>
+          <%= link_to document.filename, rails_blob_path(document, disposition: "attachment") %><br />
+        <% end %></td>
         <td><%= time_ago_in_words(resource.created_at) %> ago</td>
         <td><% resource.languages.each do |language| %>
         <%= link_to language.name, language_path(language) %>

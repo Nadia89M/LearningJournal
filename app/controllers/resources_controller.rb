@@ -61,6 +61,19 @@ class ResourcesController < ApplicationController
     end
   end
 
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
+    redirect_back(fallback_location: request.referer)
+  end
+
+  def delete_document_attachment
+    @document = ActiveStorage::Attachment.find(params[:id])
+    @document.purge
+    redirect_back(fallback_location: request.referer)
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_resource
@@ -69,6 +82,6 @@ class ResourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resource_params
-      params.require(:resource).permit(:url, :memo, :image, :document, language_ids: [], images: [])
+      params.require(:resource).permit(:url, :memo, :image, :document, language_ids: [], images: [], documents: [])
     end
 end

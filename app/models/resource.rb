@@ -4,4 +4,5 @@ class Resource < ApplicationRecord
   has_many :resource_languages
   has_many :languages, through: :resource_languages
   has_many_attached :images
+  has_many_attached :documents
 end

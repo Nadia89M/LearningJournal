@@ -7,6 +7,9 @@
   <dd><% @resource.images.each do |image| %>
   <%= image_tag image, class: "img-show" %> <br />
   <% end %></dd>
+  <dd><% @resource.documents.each do |document| %>
+    <%= link_to document.filename, rails_blob_path(document, disposition: "attachment") %><br />
+    <% end %></dd>
   <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
   <dd><%= @resource.url %></dd>
   <dt><strong><%= model_class.human_attribute_name(:memo) %>:</strong></dt>
