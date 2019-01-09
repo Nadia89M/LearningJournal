@@ -8,18 +8,18 @@
       </div>
       <div class="col-md-8">
         <%= f.text_field :name, class: "form-control",
-        placeholder: "Enter Db", autofocus: true %>
+        placeholder: "Enter DB", autofocus: true %>
       </div>
     </div>
     <div class="form-group">
       <div class="col-md-offset-2 col-md-10">
-        <%= f.submit(@db.new_record? ? "Add Db" : "Update Db",
+        <%= f.submit(@db.new_record? ? "Add DB" : "Update DB",
         class: "btn btn-danger btn-lg") %>
       </div>
     </div>
     <% end %>
     <div class="col-md-4 col-md-offset-4 colormatch">
-      [ <%= link_to "Db listing",
+      [ <%= link_to "DB listing",
       dbs_path %> ]
     </div>
   </div>

@@ -1,4 +1,4 @@
-<%= form_for @resource, :html => { :class => "form-horizontal resource" } do |f| %>
+<%= form_for([@project, @resource], :html => { :class => "form-horizontal resource" }) do |f| %>
 
   <% if @resource.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -92,6 +92,14 @@
       <% end %>
     </div>
   </div>
+</div>
+
+<div class="form-group">
+<%= f.label :project, :class => 'control-label col-lg-2' %>
+<div class="col-lg-10">
+  <%= f.collection_select :project_id, @projects, :id, :name, :include_blank => true, :class => 'form-control' %>
+  </div>
+<%=f.error_span(:document) %>
 </div>
 
   <div class="form-group">
