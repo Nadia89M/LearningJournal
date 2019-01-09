@@ -24,62 +24,64 @@
 <br>
 <br>
 <%- model_class = Resource -%>
-              <div class="page-header">
-                <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-              </div>
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th><%= model_class.human_attribute_name(:name) %></th>
-                    <th><%= model_class.human_attribute_name(:url) %></th>
-                    <th><%= model_class.human_attribute_name(:memo) %></th>
-                    <th><%= model_class.human_attribute_name(:image) %></th>
-                    <th><%= model_class.human_attribute_name(:document) %></th>
-                    <th><%= model_class.human_attribute_name(:created_at) %></th>
-                    <th><%= model_class.human_attribute_name(:languages) %></th>
-                    <th><%= model_class.human_attribute_name(:technologies) %></th>
-                    <th><%= model_class.human_attribute_name(:frameworks) %></th>
-                    <th><%= model_class.human_attribute_name(:databases) %></th>
-                    <th><%=t '.actions', :default => t("helpers.actions") %></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% @project.resources.each do |resource| %>
-                    <tr>
-                      <td class="resource-item"><%= resource.name%></td>
-                      <td><%= resource.url%></td>
-                      <td><%= resource.memo %></td>
-                      <td><%= resource.image %></td>
-                      <td><%= resource.document %></td>
-                      <td><%= time_ago_in_words(resource.created_at) %> ago</td>
-                      <td><% resource.languages.each do |language| %>
-                      <%= link_to language.name, language_path(language) %>
-                      <% end %></td>
-                      <td><% resource.technologies.each do |technology| %>
-                        <%= link_to technology.name, technology_path(technology) %>
-                        <% end %></td>
-                      <td><% resource.frameworks.each do |framework| %>
-                          <%= link_to framework.name, framework_path(framework) %>
-                          <% end %></td>
-                      <td><% resource.dbs.each do |db| %>
-                          <%= link_to db.name, db_path(db) %>
-                          <% end %></td>
-                      <td>
-                        <%= link_to t('.show', :default => t("helpers.links.show")),
-                                    resource_path(resource), :class => 'btn btn-default btn-xs' %>
-                        <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                                    edit_resource_path(resource), :class => 'btn btn-default btn-xs' %>
-                        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                                    resource_path(resource),
-                                    :method => :delete,
-                                    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                                    :class => 'btn btn-xs btn-danger' %>
-                      </td>
-                    </tr>
-                  <% end %>
-                </tbody>
-              </table>
-              
-              <%= link_to t('.new', :default => t("helpers.links.new")),
-                          new_resource_path,
-                          :class => 'btn btn-primary' %>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:memo) %></th>
+      <th><%= model_class.human_attribute_name(:image) %></th>
+      <th><%= model_class.human_attribute_name(:document) %></th>
+      <th><%= model_class.human_attribute_name(:updated) %></th>
+      <th><%= model_class.human_attribute_name(:languages) %></th>
+      <th><%= model_class.human_attribute_name(:technologies) %></th>
+      <th><%= model_class.human_attribute_name(:frameworks) %></th>
+      <th><%= model_class.human_attribute_name(:databases) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @resources.each do |resource| %>
+      <tr>
+        <td class="resource-item"><%=link_to resource.name, resource.url%></td>
+        <td><%= resource.memo %></td>
+        <td><% resource.images.each do |image| %>
+          <%= image_tag image, class: "img-index" %> <br />
+        <% end %></td>
+        <td><% resource.documents.each do |document| %>
+          <%= link_to document.filename, rails_blob_path(document, disposition: "attachment") %><br />
+        <% end %></td>
+        <td><%= time_ago_in_words(resource.updated_at) %> ago</td>
+        <td><% resource.languages.each do |language| %>
+        <%= link_to language.name, language_path(language) %>
+        <% end %></td>
+        <td><% resource.technologies.each do |technology| %>
+          <%= link_to technology.name, technology_path(technology) %>
+          <% end %></td>
+        <td><% resource.frameworks.each do |framework| %>
+            <%= link_to framework.name, framework_path(framework) %>
+            <% end %></td>
+        <td><% resource.dbs.each do |db| %>
+            <%= link_to db.name, db_path(db) %>
+            <% end %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      resource_path(resource), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_resource_path(resource), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      resource_path(resource),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_resource_path,
+            :class => 'btn btn-primary' %>

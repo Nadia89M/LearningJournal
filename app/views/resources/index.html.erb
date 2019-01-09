@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:url) %></th>
       <th><%= model_class.human_attribute_name(:memo) %></th>
       <th><%= model_class.human_attribute_name(:image) %></th>
       <th><%= model_class.human_attribute_name(:document) %></th>
@@ -21,8 +20,7 @@
   <tbody>
     <% @resources.each do |resource| %>
       <tr>
-        <td class="resource-item"><%= resource.name%></td>
-        <td><%= resource.url%></td>
+        <td class="resource-item"><%=link_to resource.name, resource.url, target: '_blank'%></td>
         <td><%= resource.memo %></td>
         <td><% resource.images.each do |image| %>
           <%= image_tag image, class: "img-index" %> <br />

@@ -1,8 +1,10 @@
 <h1 align="center">Technologies</h1>
 <% @technologies.each do |technology| %>
+  <div class="div-elem">
   <h4><%= technology.name %></h4>
   <%= link_to 'Show', technology %>
   <%= link_to 'Edit', edit_technology_path(technology) %>
+  <div>
 <% end %>
 <br>
 <br>

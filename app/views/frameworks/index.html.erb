@@ -1,8 +1,10 @@
 <h1 align="center">Frameworks</h1>
 <% @frameworks.each do |framework| %>
+  <div class="div-elem">
   <h4><%= framework.name %></h4>
   <%= link_to 'Show', framework %>
   <%= link_to 'Edit', edit_framework_path(framework) %>
+  </div>
 <% end %>
 <br>
 <br>

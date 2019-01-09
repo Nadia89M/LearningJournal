@@ -40,7 +40,14 @@ $(document).on("turbolinks:load", function() {
       }
     });
   });
+
   $("#resource_project_id").select2();
+
+
+  if($(location).attr('href') == 'https://nadiamohamed-learningjournal.herokuapp.com/' || $(location).attr('href') == 'https://nadiamohamed-learningjournal.herokuapp.com/resources'){
+    $('#search-form').css('display', 'block');
+  };
+
 });
 
 

@@ -1,11 +1,13 @@
 <h1 align="center">Languages</h1>
 <% @languages.each do |language| %>
+  <div class="div-elem">
   <h4><%= language.name %></h4>
   <%= link_to 'Show', language %>
   <%= link_to 'Edit', edit_language_path(language) %>
+  </div>
 <% end %>
 <br>
 <br>
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_resource_path,
+            new_language_path,
             :class => 'btn btn-primary' %>

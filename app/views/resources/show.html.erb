@@ -7,33 +7,42 @@
   <dd><% @resource.images.each do |image| %>
   <%= image_tag image, class: "img-show" %> <br />
   <% end %></dd>
+  <% if @resource.documents.any? %>
+  <dt><strong><%= model_class.human_attribute_name(:documents) %>:</strong></dt>
   <dd><% @resource.documents.each do |document| %>
     <%= link_to document.filename, rails_blob_path(document, disposition: "attachment") %><br />
     <% end %></dd>
+  <%end%>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @resource.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
   <dd><%= @resource.url %></dd>
   <dt><strong><%= model_class.human_attribute_name(:memo) %>:</strong></dt>
   <dd><%= @resource.memo %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:document) %>:</strong></dt>
-  <dd><%= @resource.document %></dd>
+  <% if @resource.languages.any? %>
   <dt><strong><%= model_class.human_attribute_name(:languages) %>:</strong></dt>
   <dd><% @resource.languages.each do |language| %>
       <%= link_to language.name, language_path(language) %>
       <% end %></dd>
+  <%end%>
+  <% if @resource.technologies.any? %>
   <dt><strong><%= model_class.human_attribute_name(:technologies) %>:</strong></dt>
   <dd><% @resource.technologies.each do |technology| %>
       <%= link_to technology.name, technology_path(technology) %>
       <% end %></dd>
+  <% end %>
+  <% if @resource.frameworks.any? %>
   <dt><strong><%= model_class.human_attribute_name(:frameworks) %>:</strong></dt>
   <dd><% @resource.frameworks.each do |framework| %>
       <%= link_to framework.name, framework_path(framework) %>
       <% end %></dd>
+  <% end %>
+  <%if @resource.dbs.any?%>
   <dt><strong><%= model_class.human_attribute_name(:databases) %>:</strong></dt>
   <dd><% @resource.dbs.each do |db| %>
       <%= link_to db.name, db_path(db) %>
       <% end %></dd>
+  <%end%>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
