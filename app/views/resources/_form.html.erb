@@ -36,21 +36,46 @@
     </div>
     <%=f.error_span(:memo) %>
   </div>
+  
   <div class="form-group">
-    <%= f.label :image, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :image, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:image) %>
+  <%= f.label :images, :class => 'control-label col-lg-2' %>
+  <div class="col-lg-10">
+  <%= f.file_field :images, multiple: true %><br>
   </div>
-  <div class="form-group">
-    <%= f.label :document, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :document, :class => 'form-control' %>
-    </div>
-    <%=f.error_span(:document) %>
+  <%=f.error_span(:images) %>
   </div>
+
+<div>
+  <% if @resource.images.attached? %>
+    <% @resource.images.each do |image| %>
+    <%= image_tag image, class: "img-form" %>
+    <%= link_to 'Remove', delete_image_attachment_resource_url(image.id),
+                method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  <% end %>
+</div>
+
   <div class="form-group">
+  <%= f.label :documents, :class => 'control-label col-lg-2' %>
+  <div class="col-lg-10">
+  <%= f.file_field :documents, multiple: true %><br>
+  </div>
+  <%=f.error_span(:documents) %>
+  </div>
+
+  <div class= "div-form">
+  <% if @resource.documents.attached? %>
+    <% @resource.documents.each do |document| %>
+    <%= link_to document.filename, rails_blob_path(document, disposition: "attachment" ) %>
+    <%= link_to 'Remove', delete_document_attachment_resource_url(document.id),
+                method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  <% end %>
+</div>
+
+  <div class="form-group div-form">
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :language_ids, 
@@ -61,7 +86,7 @@
   </div>
 </div>
 
-<div class="form-group">
+<div class="form-group div-form">
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :technology_ids, 
@@ -72,7 +97,7 @@
   </div>
 </div>
 
-<div class="form-group">
+<div class="form-group div-form">
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :framework_ids, 
@@ -83,7 +108,7 @@
   </div>
 </div>
 
-<div class="form-group">
+<div class="form-group div-form">
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :db_ids, 

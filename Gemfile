@@ -42,6 +42,8 @@ gem "twitter-bootstrap-rails"
 # This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application.
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
+# This gem contains every available AWS service gem support. 
+gem 'aws-sdk-s3', '~> 1.0.0.rc2'
 #Select2 gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.
 gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 
