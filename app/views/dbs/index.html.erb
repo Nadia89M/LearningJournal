@@ -1,13 +1,21 @@
-<h1 align="center">DBs</h1>
-<% @dbs.each do |db| %>
-  <div class="div-elem">
-  <h4><%= db.name %></h4>
-  <%= link_to 'Show', db %>
-  <%= link_to 'Edit', edit_db_path(db) %>
-  </div>
-<% end %>
+<h1 align="center">Databases</h1>
+<table class="elem-container">
+  <tbody>
+    <% @dbs.each do |db| %>
+      <tr>
+        <td class="elem-name"><i class="fas fa-check check"></i>  <%= db.name %></td>
+        <td>
+        <%= link_to 'Show', db %>
+        <%= link_to 'Edit', edit_db_path(db) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <br>
 <br>
+<div class="elem-btn">
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_db_path,
-            :class => 'btn btn-primary' %>
+    new_db_path,
+    :class => 'btn btn-primary' %>
+</div>

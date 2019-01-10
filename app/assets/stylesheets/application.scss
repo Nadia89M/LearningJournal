@@ -4,8 +4,13 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+body {
+  font-family: 'Lora', serif;
+}
+
 h1 {
   padding: 1em 0;
+  text-align: center;
 }
 
 .collapse.in {
@@ -14,28 +19,6 @@ h1 {
 
 .remove {
   display: none;
-}
-
-.input_checkbox input {
-  width: auto !important;
-}
-
-.img-show {
-  width: 24em;
-  height: auto;
-  margin: 1em 0;
-}
-
-.img-index {
-  width: 4em;
-  height: auto;
-}
-
-.img-form {
-  width: 50px;
-  height: auto;
-  margin-left: 1em;
-  margin-bottom: 1em;
 }
 
 .div-form {
@@ -48,8 +31,122 @@ h1 {
   padding: 1.5em 0;
 }
 
-#search-form {
-  display: none;
+.elem-name {
+  padding-right: 1em;
+  font-size: 130%;
+}
+
+.elem-container {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.elem-btn {
+  text-align: center;
+}
+
+//Navbar
+
+nav {
+  background-color: #428bca;
+  border-radius: 0.2em;
+}
+
+.nav-link {
+  color: white;
+  &:hover {
+    color: #343a40 ;
+  }
+}
+
+.navbar-brand {
+  color: #343a40 ;
+  font-weight: bold;
+  &:hover {
+    color: white;
+  }
+}
+
+//Index Page - Projects
+
+.project-name {
+  color: #343a40;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+//Show Page - Resources
+
+.img-show {
+  width: 24em;
+  height: auto;
+  margin: 1em 0;
+}
+
+.show-container {
+  border: 0.4em solid	#d9534f;
+  border-radius: 0.75em;
+  padding: 3em 0;
+  margin: 3em;
+}
+
+//Index Page - Resources
+
+.img-index {
+  width: 4em;
+  height: auto;
+}
+
+.resource-item a {
+  color: #343a40;
+  font-weight: bold;
+  font-size: 110%;
+}
+
+//Form - Resources
+
+.img-form {
+  width: 50px;
+  height: auto;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.input_checkbox {
+  padding-right: 1em;
+}
+
+.control-label {
+  font-weight: bold;
+}
+
+.elem-label {
+  padding-left: 0;
+}
+
+.project-id-elem {
+  padding-bottom: 1.5em;
+}
+
+.document-elem {
+  color: #343a40;
+  padding-right: 1em;
+}
+
+.img-elem {
+  margin-right: 1em;
+}
+
+//Elem 
+
+.check {
+  color:	#d9534f;
+  font-size: 150%;
+}
+
+.resources-list {
+  font-size: 150%;
+  color: #343a40;
 }
 
 // Medium devices (tablets, 768px and up)

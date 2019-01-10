@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg">
   <%=link_to "Nadia's Learning Journal", root_path, class: "navbar-brand"%>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -45,9 +45,11 @@
         </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" id="search-form">
+    <% if current_page?(resources_path) || current_page?(root_path)%>
+    <form class="form-inline my-2 my-lg-0" >
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search-item">
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" id="search-btn">Search</button>
+      <button class="btn btn-dark my-2 my-sm-0" type="submit" id="search-btn">Search</button>
     </form>
+    <% end %>
   </div>
 </nav>

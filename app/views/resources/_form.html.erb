@@ -38,7 +38,7 @@
   </div>
   
   <div class="form-group">
-  <%= f.label :images, :class => 'control-label col-lg-2' %>
+  <%= f.label :images, :class => 'control-label col-lg-2 ' %>
   <div class="col-lg-10">
   <%= f.file_field :images, multiple: true %><br>
   </div>
@@ -48,7 +48,7 @@
 <div>
   <% if @resource.images.attached? %>
     <% @resource.images.each do |image| %>
-    <%= image_tag image, class: "img-form" %>
+    <%= image_tag image, class: "img-form img-elem" %>
     <%= link_to 'Remove', delete_image_attachment_resource_url(image.id),
                 method: :delete,
                   data: { confirm: 'Are you sure?' } %>
@@ -67,7 +67,8 @@
   <div class= "div-form">
   <% if @resource.documents.attached? %>
     <% @resource.documents.each do |document| %>
-    <%= link_to document.filename, rails_blob_path(document, disposition: "attachment" ) %>
+    <i class="far fa-file"></i>
+    <%= link_to document.filename, rails_blob_path(document, disposition: "attachment" ), :class => 'document-elem' %>
     <%= link_to 'Remove', delete_document_attachment_resource_url(document.id),
                 method: :delete,
                   data: { confirm: 'Are you sure?' } %>
@@ -76,6 +77,7 @@
 </div>
 
   <div class="form-group div-form">
+  <%= f.label :languages, :class => 'control-label col-lg-2 elem-label' %>
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :language_ids, 
@@ -87,6 +89,7 @@
 </div>
 
 <div class="form-group div-form">
+<%= f.label :technologies, :class => 'control-label col-lg-2 elem-label' %>
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :technology_ids, 
@@ -98,6 +101,7 @@
 </div>
 
 <div class="form-group div-form">
+  <%= f.label :frameworks, :class => 'control-label col-lg-2 elem-label' %>
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :framework_ids, 
@@ -109,6 +113,7 @@
 </div>
 
 <div class="form-group div-form">
+  <%= f.label :databases, :class => 'control-label col-lg-2 elem-label' %>
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :db_ids, 
@@ -119,7 +124,7 @@
   </div>
 </div>
 
-<div class="form-group">
+<div class="form-group project-id-elem">
 <%= f.label :project, :class => 'control-label col-lg-2' %>
 <div class="col-lg-10">
   <%= f.collection_select :project_id, @projects, :id, :name, :include_blank => true, :class => 'form-control' %>

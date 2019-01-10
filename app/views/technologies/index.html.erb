@@ -1,13 +1,21 @@
 <h1 align="center">Technologies</h1>
-<% @technologies.each do |technology| %>
-  <div class="div-elem">
-  <h4><%= technology.name %></h4>
-  <%= link_to 'Show', technology %>
-  <%= link_to 'Edit', edit_technology_path(technology) %>
-  <div>
-<% end %>
+<table class="elem-container">
+  <tbody>
+    <% @technologies.each do |technology| %>
+      <tr>
+        <td class="elem-name"><i class="fas fa-check check"></i>  <%= technology.name %></td>
+        <td>
+        <%= link_to 'Show', technology %>
+        <%= link_to 'Edit', edit_technology_path(technology) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <br>
 <br>
+<div class="elem-btn">
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_technology_path,
-            :class => 'btn btn-primary' %>
+    new_technology_path,
+    :class => 'btn btn-primary' %>
+</div>

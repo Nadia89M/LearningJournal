@@ -1,13 +1,21 @@
 <h1 align="center">Languages</h1>
-<% @languages.each do |language| %>
-  <div class="div-elem">
-  <h4><%= language.name %></h4>
-  <%= link_to 'Show', language %>
-  <%= link_to 'Edit', edit_language_path(language) %>
-  </div>
-<% end %>
+<table class="elem-container">
+  <tbody>
+    <% @languages.each do |language| %>
+      <tr>
+        <td class="elem-name"><i class="fas fa-check check"></i>  <%= language.name %></td>
+        <td>
+        <%= link_to 'Show', language %>
+        <%= link_to 'Edit', edit_language_path(language) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <br>
 <br>
+<div class="elem-btn">
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_language_path,
-            :class => 'btn btn-primary' %>
+    new_language_path,
+    :class => 'btn btn-primary' %>
+</div>

@@ -3,54 +3,63 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dd><% @resource.images.each do |image| %>
-  <%= image_tag image, class: "img-show" %> <br />
-  <% end %></dd>
-  <% if @resource.documents.any? %>
-  <dt><strong><%= model_class.human_attribute_name(:documents) %>:</strong></dt>
-  <dd><% @resource.documents.each do |document| %>
-    <%= link_to document.filename, rails_blob_path(document, disposition: "attachment") %><br />
-    <% end %></dd>
-  <%end%>
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @resource.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
-  <dd><%= @resource.url %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:memo) %>:</strong></dt>
-  <dd><%= @resource.memo %></dd>
-  <% if @resource.languages.any? %>
-  <dt><strong><%= model_class.human_attribute_name(:languages) %>:</strong></dt>
-  <dd><% @resource.languages.each do |language| %>
-      <%= link_to language.name, language_path(language) %>
-      <% end %></dd>
-  <%end%>
-  <% if @resource.technologies.any? %>
-  <dt><strong><%= model_class.human_attribute_name(:technologies) %>:</strong></dt>
-  <dd><% @resource.technologies.each do |technology| %>
-      <%= link_to technology.name, technology_path(technology) %>
-      <% end %></dd>
-  <% end %>
-  <% if @resource.frameworks.any? %>
-  <dt><strong><%= model_class.human_attribute_name(:frameworks) %>:</strong></dt>
-  <dd><% @resource.frameworks.each do |framework| %>
-      <%= link_to framework.name, framework_path(framework) %>
-      <% end %></dd>
-  <% end %>
-  <%if @resource.dbs.any?%>
-  <dt><strong><%= model_class.human_attribute_name(:databases) %>:</strong></dt>
-  <dd><% @resource.dbs.each do |db| %>
-      <%= link_to db.name, db_path(db) %>
-      <% end %></dd>
-  <%end%>
-</dl>
+<div class="row show-container">
+  <div class="offset-4 col-4 ">
+    <dl class="dl-horizontal">
+    <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+    <dd><%= @resource.name %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:url) %>:</strong></dt>
+    <dd><%= @resource.url %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:memo) %>:</strong></dt>
+    <dd><%= @resource.memo %></dd>
+    <% if @resource.languages.any? %>
+    <dt><strong><%= model_class.human_attribute_name(:languages) %>:</strong></dt>
+    <dd><% @resource.languages.each do |language| %>
+        <%= link_to language.name, language_path(language) %>
+        <% end %></dd>
+    <%end%>
+    <% if @resource.technologies.any? %>
+    <dt><strong><%= model_class.human_attribute_name(:technologies) %>:</strong></dt>
+    <dd><% @resource.technologies.each do |technology| %>
+        <%= link_to technology.name, technology_path(technology) %>
+        <% end %></dd>
+    <% end %>
+    <% if @resource.frameworks.any? %>
+    <dt><strong><%= model_class.human_attribute_name(:frameworks) %>:</strong></dt>
+    <dd><% @resource.frameworks.each do |framework| %>
+        <%= link_to framework.name, framework_path(framework) %>
+        <% end %></dd>
+    <% end %>
+    <%if @resource.dbs.any?%>
+    <dt><strong><%= model_class.human_attribute_name(:databases) %>:</strong></dt>
+    <dd><% @resource.dbs.each do |db| %>
+        <%= link_to db.name, db_path(db) %>
+        <% end %></dd>
+    <%end%>
+    <% if @resource.documents.any? %>
+    <dt><strong><%= model_class.human_attribute_name(:documents) %>:</strong></dt>
+    <dd><% @resource.documents.each do |document| %>
+        <i class="far fa-file"></i>
+        <%= link_to document.filename, rails_blob_path(document, disposition: "attachment") %><br />
+        <% end %></dd>
+    <%end%>
+    <% if @resource.images.any? %>
+    <dd><% @resource.images.each do |image| %>
+        <dt><strong><%= model_class.human_attribute_name(:images) %>:</strong></dt>
+        <%= image_tag image, class: "img-show" %> <br />
+        <%= link_to 'download', rails_blob_path(image, disposition: "attachment") %><br />
+        <% end %></dd>
+    <% end %>
+    </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              resources_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_resource_path(@resource), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              resource_path(@resource),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+                resources_path, :class => 'btn btn-default'  %>
+    <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                edit_resource_path(@resource), :class => 'btn btn-default' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                resource_path(@resource),
+                :method => 'delete',
+                :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                :class => 'btn btn-danger' %>
+  </div>
+</div>
