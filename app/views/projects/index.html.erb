@@ -15,10 +15,10 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.name %></td>
+        <td class="project-name"><%= project.name %></td>
         <td><%= project.description %></td>
         <td><%= project.start_date %></td>
-        <td><%=time_ago_in_words(project.updated_at) %></td>
+        <td><%=time_ago_in_words(project.updated_at)%> ago</td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       project_path(project), :class => 'btn btn-default btn-xs' %>

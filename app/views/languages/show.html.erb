@@ -1,10 +1,13 @@
 <h1><%= @language.name %></h1>
 <% if @language.resources.any? %>
-  <h4 align="center">Resouces' containing <%= @language.name %></h4>
+  <h4 align="center">Resouces' containing <%= @language.name %> :</h4>
+  <br/>
   <% @language.resources.each do |resource| %>
-  <h4><%= resource.url %></h4>
-  <%= link_to 'Show', resource %>
-  <%= link_to 'Edit', edit_resource_path(resource) %>
+    <div align="center">
+      <p><i class="far fa-check-square check"></i>  <span class="resources-list"><%= resource.name %></span>       
+      <%= link_to 'Show', resource %>
+      <%= link_to 'Edit', edit_resource_path(resource) %><p>
+    </div>
   <% end %>
 <% else %>
   <h4 align="center">No resources yet!</h4>

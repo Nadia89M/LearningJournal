@@ -1,11 +1,21 @@
 <h1 align="center">Frameworks</h1>
-<% @frameworks.each do |framework| %>
-  <h4><%= framework.name %></h4>
-  <%= link_to 'Show', framework %>
-  <%= link_to 'Edit', edit_framework_path(framework) %>
-<% end %>
+<table class="elem-container">
+  <tbody>
+    <% @frameworks.each do |framework| %>
+      <tr>
+        <td class="elem-name"><i class="fas fa-check check"></i>  <%= framework.name %></td>
+        <td>
+        <%= link_to 'Show', framework %>
+        <%= link_to 'Edit', edit_framework_path(framework) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 <br>
 <br>
+<div class="elem-btn">
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_framework_path,
-            :class => 'btn btn-primary' %>
+    new_framework_path,
+    :class => 'btn btn-primary' %>
+</div>
