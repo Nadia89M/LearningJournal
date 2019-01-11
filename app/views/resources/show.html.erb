@@ -3,6 +3,16 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<div id="page">
+  <% if flash[:alert] %>
+    <p class="alert alert-danger" role="alert"><%= flash[:alert] %></p>
+  <% end %>
+  <% if flash[:notice] %>
+    <p class="alert alert-success" role="alert"><%= flash[:notice] %></p>
+  <% end %>
+  <%= yield %>
+</div>
+
 <dl class="dl-horizontal">
   <dd><% @resource.images.each do |image| %>
   <%= image_tag image, class: "img-show" %> <br />
