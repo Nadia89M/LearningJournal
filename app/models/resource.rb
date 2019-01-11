@@ -26,7 +26,7 @@ class Resource < ApplicationRecord
       images.each do |image|
         if !image.blob.content_type.in?(%w(image/jpeg image/jpg image/png))
           images_valid = false
-          error_message = 'The image wrong format'
+          error_message = "can't have this format"
         end
       end
     end

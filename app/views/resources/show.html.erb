@@ -5,12 +5,11 @@
 
 <div id="page">
   <% if flash[:alert] %>
-    <p class="alert alert-danger" role="alert"><%= flash[:alert] %></p>
+    <p class="alert alert-danger" role="alert">Resource not successfully updated: <br><%= flash[:alert] %></p>
   <% end %>
   <% if flash[:notice] %>
     <p class="alert alert-success" role="alert"><%= flash[:notice] %></p>
   <% end %>
-  <%= yield %>
 </div>
 
 <dl class="dl-horizontal">

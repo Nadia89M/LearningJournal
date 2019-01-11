@@ -48,7 +48,7 @@ class ResourcesController < ApplicationController
         format.html { redirect_to @resource, notice: 'Resource was successfully updated.' }
         format.json { render :show, status: :ok, location: @resource }
       else
-        format.html { redirect_to @resource, alert: 'Resource not successfully created' }
+        format.html { redirect_to @resource, alert: @resource.errors.full_messages.to_sentence }
         format.json { render json: @resource.errors, status: :unprocessable_entity }
       end
     end
