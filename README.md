@@ -1,24 +1,27 @@
-# README
+#Programming Learning Journal 
+ This is a Ruby on Rails 5 application that will help you keep track of your progress as you gain experience with a variety of languages, libraries, frameworks and technologies.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Getting Started
+To get the Rails server running locally:
 
-Things you may want to cover:
+*Clone this repo
+*bundle install to install all req'd dependencies
+*rake db:migrate to make all database migrations
+*rails s to start the local server
 
-* Ruby version
+##Dependencies
+*[bootstrap](https://github.com/twbs/bootstrap-rubygem) - The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web
+*[twitter-bootstrap-rails](https://github.com/seyhunak/twitter-bootstrap-rails) - The plain CSS Bootstrap
+*[jquery-rails](https://github.com/rails/jquery-rails) - This gem provides jQuery and the jQuery-ujs driver for your Rails 4+ application
+*[aws-sdk-s3](https://github.com/aws/aws-sdk-ruby) - This gem contains the specific AWS service gem support for S3
+*[select2-rails](https://github.com/argerim/select2-rails) - Select2 gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options
 
-* System dependencies
+##Folders
+*`app/models` - Contains the database models for the application where we can define methods, validations, queries, and relations to other models.
+*`app/views` - Contains templates for generating the JSON output for the API
+*`app/controllers` - Contains the controllers where requests are routed to their actions, where we find and manipulate our models and return them for the views to render.
+*`config` - Contains configuration files for our Rails application and for our database, along with an initializers folder for scripts that get run on boot.
+*`db` - Contains the migrations needed to create our database schema.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Author
+Nadia Mohamed - [Nadia89M](https://github.com/Nadia89M)
