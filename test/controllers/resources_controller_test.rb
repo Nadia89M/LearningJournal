@@ -17,7 +17,7 @@ class ResourcesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create resource" do
     assert_difference('Resource.count') do
-      post resources_url, params: { resource: { document: @resource.document, image: @resource.image, memo: @resource.memo, url: @resource.url } }
+      post resources_url, params: { resource: { memo: @resource.memo, url: @resource.url, name: @resource.name, language_ids: @resource.language_ids, db_ids: @resource.db_ids, framework_ids: @resource.framework_ids, technology_ids: @resource.technology_ids, project_id: @resource.project_id } }
     end
 
     assert_redirected_to resource_url(Resource.last)
@@ -34,7 +34,7 @@ class ResourcesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update resource" do
-    patch resource_url(@resource), params: { resource: { document: @resource.document, image: @resource.image, memo: @resource.memo, url: @resource.url } }
+    patch resource_url(@resource), params: { resource: { memo: @resource.memo, url: @resource.url, name: @resource.name, language_ids: @resource.language_ids, db_ids: @resource.db_ids, framework_ids: @resource.framework_ids, technology_ids: @resource.technology_ids, project_id: @resource.project_id } }
     assert_redirected_to resource_url(@resource)
   end
 

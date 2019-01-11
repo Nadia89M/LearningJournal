@@ -3,6 +3,15 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<div id="page">
+  <% if flash[:alert] %>
+    <p class="alert alert-danger" role="alert">Resource not successfully updated: <br><%= flash[:alert] %></p>
+  <% end %>
+  <% if flash[:notice] %>
+    <p class="alert alert-success" role="alert"><%= flash[:notice] %></p>
+  <% end %>
+</div>
+
 <div class="row show-container">
   <div class="offset-4 col-4 ">
     <dl class="dl-horizontal">
