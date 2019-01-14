@@ -1,10 +1,10 @@
 <h1 align="center">Frameworks</h1>
 <table class="elem-container">
-  <tbody>
+  <tbody class="elem-body">
     <% @frameworks.each do |framework| %>
-      <tr>
+      <tr class="row-elem">
         <td class="elem-name"><i class="fas fa-check check"></i>  <%= framework.name %></td>
-        <td>
+        <td class="elem-action">
         <%= link_to 'Show', framework %>
         <%= link_to 'Edit', edit_framework_path(framework) %>
         </td>

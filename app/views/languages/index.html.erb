@@ -1,10 +1,10 @@
 <h1 align="center">Languages</h1>
 <table class="elem-container">
-  <tbody>
+  <tbody class="elem-body">
     <% @languages.each do |language| %>
-      <tr>
+      <tr class="row-elem">
         <td class="elem-name"><i class="fas fa-check check"></i>  <%= language.name %></td>
-        <td>
+        <td class="elem-action">
         <%= link_to 'Show', language %>
         <%= link_to 'Edit', edit_language_path(language) %>
         </td>

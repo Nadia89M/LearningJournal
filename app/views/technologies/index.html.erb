@@ -1,10 +1,10 @@
 <h1 align="center">Technologies</h1>
 <table class="elem-container">
-  <tbody>
+  <tbody class="elem-body">
     <% @technologies.each do |technology| %>
-      <tr>
+      <tr class="row-elem">
         <td class="elem-name"><i class="fas fa-check check"></i>  <%= technology.name %></td>
-        <td>
+        <td class="elem-action">
         <%= link_to 'Show', technology %>
         <%= link_to 'Edit', edit_technology_path(technology) %>
         </td>
