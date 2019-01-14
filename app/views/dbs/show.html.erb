@@ -2,13 +2,19 @@
 <% if @db.resources.any? %>
   <h4 align="center">Resouces' containing <%= @db.name %> :</h4>
   <br/>
-  <% @db.resources.each do |resource| %>
-    <div align="center">
-      <p><i class="far fa-check-square check"></i>  <span class="resources-list"><%= resource.name %></span>       
-      <%= link_to 'Show', resource %>
-      <%= link_to 'Edit', edit_resource_path(resource) %><p>
-    </div>
-  <% end %>
-<% else %>
+  <table class="elem-container">
+    <tbody class="elem-body">
+      <% @db.resources.each do |resource| %>
+      <tr class="row-elem">
+        <td class="elem-name"><i class="far fa-check-square check"></i>  <span class="resources-list"><%= resource.name %></span></td>       
+        <td class="elem-action">
+          <%= link_to 'Show', resource %>
+          <%= link_to 'Edit', edit_resource_path(resource) %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
   <h4 align="center">No resources yet!</h4>
 <% end %>
