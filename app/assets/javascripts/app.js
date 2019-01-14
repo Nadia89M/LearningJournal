@@ -43,6 +43,10 @@ $(document).on("turbolinks:load", function() {
 
   $("#resource_project_id").select2();
 
+  setTimeout(function(){
+    $('#page').fadeOut();
+  }, 4000);
+
 });
 
 
