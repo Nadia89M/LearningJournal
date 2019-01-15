@@ -3,7 +3,7 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 <div class="row show-container">
-  <div class="offset-4 col-4 ">
+  <div class="offset-2 col-8 ">
     <dl class="dl-horizontal">
       <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
       <dd><%= @project.name %></dd>
@@ -29,6 +29,11 @@
 <%- model_class = Resource -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<div class="new">
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_project_path,
+              :class => 'btn btn-primary' %>
 </div>
 <table class="table table-striped">
   <thead>
@@ -84,7 +89,3 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_resource_path,
-            :class => 'btn btn-primary' %>
