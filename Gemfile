@@ -43,7 +43,7 @@ gem "twitter-bootstrap-rails"
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 # This gem contains the available AWS S3 service gem support. 
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', '~> 1.0.0.rc2'
 #Select2 gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.
 gem 'select2-rails', '~> 4.0', '>= 4.0.3'
 
