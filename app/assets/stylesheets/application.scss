@@ -43,6 +43,7 @@ h1 {
   &:nth-child(even) {
     background:rgba(0, 0, 0, 0.05);;
   }
+  margin: 0;
 }
 
 .elem-body {
@@ -59,11 +60,14 @@ h1 {
 
 .table-container {
   margin: 0 7.5%;
-  overflow-x: auto;
 }
 
 .new {
   margin-bottom: 1rem;
+}
+
+.row-elem {
+  padding: 4rem;
 }
 
 //Navbar
@@ -174,6 +178,20 @@ nav {
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
 
+  .row-elem {
+    font-size: 150%;
+    padding: 8rem;
+  }
+
+  .elem-action {
+    a:first-child {
+      float: left;
+    }
+    a:last-child {
+      float: right;
+    }
+  }
+
   .resources-list {
     font-size: 99%;
   }
@@ -221,4 +239,19 @@ nav {
   }
 }
 
+// Extra small devices 
+@media only screen and (max-width: 600px) {
+  .row-elem {
+    font-size: 150%;
+    padding: 4rem;
+  }
 
+  .elem-action {
+    a:first-child {
+      float: left;
+    }
+    a:last-child {
+      float: right;
+    }
+  }
+} 
