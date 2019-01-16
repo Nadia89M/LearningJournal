@@ -3,7 +3,7 @@
   <h1><%= t("projects.show.title") %></h1>
 </div>
 <div class="row show-container">
-  <div class="offset-4 col-4 ">
+  <div class="col-md-8 offset-2">
     <dl class="dl-horizontal">
       <dt><strong><%= t("projects.show.name") %>:</strong></dt>
       <dd><%= @project.name %></dd>
@@ -30,6 +30,11 @@
 <div class="page-header">
   <h1><%=t("projects.show.resources.title")%></h1>
 </div>
+<div class="new">
+  <%= link_to t('.new', :default => t("helpers.links.new")),
+              new_project_path,
+              :class => 'btn btn-primary' %>
+</div>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -51,7 +56,7 @@
         <td class="resource-item"><%=link_to resource.name, resource.url%></td>
         <td><%= resource.memo %></td>
         <td><% resource.images.each do |image| %>
-          <%= image_tag image, class: "img-index" %> <br />
+          <%= link_to image.filename, rails_blob_path(image, disposition: "attachment") %><br />
         <% end %></td>
         <td><% resource.documents.each do |document| %>
           <%= link_to document.filename, rails_blob_path(document, disposition: "attachment") %><br />

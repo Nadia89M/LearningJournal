@@ -20,3 +20,4 @@
 //= require bootstrap
 //= require twitter/bootstrap
 //= require select2
+//= require social-share-button

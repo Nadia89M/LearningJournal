@@ -3,6 +3,7 @@
 //*= require select2-bootstrap
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import "social-share-button";
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -43,6 +44,7 @@ h1 {
   &:nth-child(even) {
     background:rgba(0, 0, 0, 0.05);;
   }
+  margin: 0;
 }
 
 .elem-body {
@@ -64,6 +66,11 @@ h1 {
 
 .new {
   margin-bottom: 1rem;
+}
+
+.row-elem,
+.show-row-elem {
+  padding: 4rem;
 }
 
 //Navbar
@@ -176,12 +183,84 @@ nav {
   color: #343a40;
 }
 
-// Medium devices (tablets, 768px and up)
-@media (max-width: 991.98px) { 
-  .elem-container {
-    font-size: 200%;
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  .row-elem,
+  .show-row-elem {
+    font-size: 150%;
+    padding: 8rem;
   }
+
+  .elem-action {
+    a:first-child {
+      float: left;
+    }
+    a:last-child {
+      float: right;
+    }
+  }
+
+  .resources-list {
+    font-size: 99%;
+  }
+
+  .show-container {
+    margin: 0;
+  }
+
+  table {
+    border: 0;
+  }
+  
+  table thead {
+    display: none;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: left;
+  }
+  
+  table td::before {
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+
 }
 
+// Extra small devices 
+@media only screen and (max-width: 600px) {
+  .row-elem {
+    font-size: 150%;
+    padding: 4rem;
+  }
 
+  .show-row-elem {
+    font-size: 130%;
+    padding: 1rem;
+  }
 
+  .elem-action {
+    a:first-child {
+      float: left;
+    }
+    a:last-child {
+      float: right;
+    }
+  }
+} 
