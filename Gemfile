@@ -46,6 +46,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'aws-sdk-s3', '~> 1.0.0.rc2'
 #Select2 gives you a customizable select box with support for searching, tagging, remote data sets, infinite scrolling, and many other highly used options.
 gem 'select2-rails', '~> 4.0', '>= 4.0.3'
+#Helper for add social share feature in your Rails app.
+gem 'social-share-button', '~> 0.1.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
