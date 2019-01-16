@@ -1,12 +1,12 @@
-<h1 align="center">Databases</h1>
+<h1 align="center"><%= t("dbs.index.title") %></h1>
 <table class="elem-container">
   <tbody class="elem-body">
     <% @dbs.each do |db| %>
       <tr class="row-elem">
         <td class="elem-name"><i class="fas fa-check check"></i>  <%= db.name %></td>
         <td class="elem-action">
-        <%= link_to 'Show', db %>
-        <%= link_to 'Edit', edit_db_path(db) %>
+        <%= link_to t("dbs.index.show"), db %>
+        <%= link_to t("dbs.index.edit"), edit_db_path(db) %>
         </td>
       </tr>
     <% end %>
@@ -15,7 +15,7 @@
 <br>
 <br>
 <div class="elem-btn">
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t("dbs.index.new", :default => t("helpers.links.new")),
     new_db_path,
     :class => 'btn btn-primary' %>
 </div>

@@ -1,12 +1,12 @@
-<h1 align="center">Languages</h1>
+<h1 align="center"><%= t("languages.index.title") %></h1>
 <table class="elem-container">
   <tbody class="elem-body">
     <% @languages.each do |language| %>
       <tr class="row-elem">
         <td class="elem-name"><i class="fas fa-check check"></i>  <%= language.name %></td>
         <td class="elem-action">
-        <%= link_to 'Show', language %>
-        <%= link_to 'Edit', edit_language_path(language) %>
+        <%= link_to t("languages.index.show"), language %>
+        <%= link_to t("languages.index.edit"), edit_language_path(language) %>
         </td>
       </tr>
     <% end %>
@@ -15,7 +15,7 @@
 <br>
 <br>
 <div class="elem-btn">
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t("languages.index.new", :default => t("helpers.links.new")),
     new_language_path,
     :class => 'btn btn-primary' %>
 </div>

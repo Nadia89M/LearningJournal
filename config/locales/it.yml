@@ -1,0 +1,247 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+it:
+  hello: "Ciao mondo"
+  navbar:
+    navbar-brand: "Le Risorse di Nadia"
+    navbar-link-resources: "Risorse"
+    navbar-link-projects: "Progetti"
+    navbar-link-languages: "Linguaggi"
+    navbar-link-technologies: "Tecnologie"
+    navbar-link-frameworks: "Frameworks"
+    navbar-link-dbs: "DBs"
+    navbar-search: "Cerca"
+  resources:
+    index:
+      title: "Risorse"
+      new: "Crea"
+      name: "Nome"
+      memo: "Memo"
+      image: "Immagine"
+      document: "Documento"
+      updated: "Aggiornata"
+      languages: "Linguaggi"
+      technologies: "Tecnologie"
+      frameworks: "Framworks"
+      dbs: "Databases"
+      actions: "Azioni"
+      show: "Mostra"
+      edit: "Modifica"
+      delete: "Cancella"
+      ago: " fa"
+    show:
+      title: "Risorse"
+      name: "Nome"
+      url: "Url"
+      memo: "Memo"
+      image: "Immagine"
+      document: "Documento"
+      updated: "Aggiornata"
+      languages: "Linguaggi"
+      technologies: "Tecnologie"
+      frameworks: "Framworks"
+      dbs: "Databases"
+      back: "Indietro"
+      edit: "Modifica"
+      delete: "Cancella"
+    new:
+      title: "Crea Risorsa"
+    edit:
+      title: "Modifica Risorsa"
+    form:
+      name: "Nome"
+      url: "Url"
+      memo: "Memo"
+      images: "Immagini"
+      documents: "Documenti"
+      languages: "Linguaggi"
+      technologies: "Tecnologie"
+      frameworks: "Framworks"
+      dbs: "Databases"
+      project: "Progetto"
+      add: "Aggiungi Risorsa"
+      update: "Aggiorna Risorsa"
+      cancel: "Cancella"
+  projects:
+    index:
+      title: "Progetti"
+      new: "Crea"
+      name: "Nome"
+      description: "Descrizione"
+      startdate: "Data"
+      updated: "Aggiornato"
+      actions: "Azioni"
+      show: "Mostra"
+      edit: "Modifica"
+      delete: "Cancella"
+      ago: " fa"
+    show:
+      title: "Progetto"
+      new: "Crea"
+      name: "Nome"
+      description: "Descrizione"
+      startdate: "Data"
+      updated: "Aggiornato"
+      back: "Indietro"
+      edit: "Modifica"
+      delete: "Cancella"
+      resources:
+        title: "Risorse"
+        new: "Crea"
+        name: "Nome"
+        memo: "Memo"
+        image: "Immagine"
+        document: "Documento"
+        updated: "Aggiornata"
+        languages: "Linguaggio"
+        technologies: "Tecnologie"
+        frameworks: "Framworks"
+        dbs: "Databases"
+        actions: "Azioni"
+        show: "Mostra"
+        edit: "Modifica"
+        delete: "Cancella"
+        ago: " fa"
+    new:
+      title: "Crea Progetto"
+    edit:
+      title: "Modifica Progetto"
+    form:
+      name: "Nome"
+      description: "Descrizione"
+      startdate: "Data"
+      add: "Aggiungi Progetto"
+      update: "Aggiorna Progetto"
+      cancel: "Cancella"
+  languages:
+    index:
+      title: "Linguaggi"
+      show: "Mostra"
+      edit: "Modifica"
+      new: "Crea"
+    show:
+      subtitle: "Risorse che contengono "
+      show: "Mostra"
+      edit: "Modifica"
+    form:
+      name: "Nome"
+      placeholder: "Inserisci Linguaggio"
+      add: "Aggiungi Linguaggio"
+      update: "Aggiorna Linguaggio"
+      listing: "Linguaggi"
+  technologies:
+    index:
+      title: "Tecnologie"
+      show: "Mostra"
+      edit: "Modifica"
+      new: "Crea"
+    show:
+      subtitle: "Risorse che contengono "
+      show: "Mostra"
+      edit: "Modifica"
+    form:
+      name: "Nome"
+      placeholder: "Inserisci Tecnologia"
+      add: "Aggiungi Tecnologia"
+      update: "Aggiorna Tecnologia"
+      listing: "Tecnologie"
+  frameworks:
+    index:
+      title: "Frameworks"
+      show: "Mostra"
+      edit: "Modifica"
+      new: "Crea"
+    show:
+      subtitle: "Risorse che contengono "
+      show: "Mostra"
+      edit: "Modifica"
+    form:
+      name: "Nome"
+      placeholder: "Inserisci Framework"
+      add: "Aggiungi Framework"
+      update: "Aggiorna Framework"
+      listing: "Frameworks"
+  dbs:
+    index:
+      title: "Databases"
+      show: "Mostra"
+      edit: "Modifica"
+      new: "Crea"
+    show:
+      subtitle: "Risorse che contengono "
+      show: "Mostra"
+      edit: "Modifica"
+    form:
+      name: "Nome"
+      placeholder: "Inserisci Database"
+      add: "Aggiungi Database"
+      update: "Aggiorna Database"
+      listing: "Databases"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: circa un'ora
+        other: circa %{count} ore
+      about_x_months:
+        one: circa un mese
+        other: circa %{count} mesi
+      about_x_years:
+        one: circa un anno
+        other: circa %{count} anni
+      almost_x_years:
+        one: circa 1 anno
+        other: circa %{count} anni
+      half_a_minute: mezzo minuto
+      less_than_x_minutes:
+        one: meno di un minuto
+        other: meno di %{count} minuti
+      less_than_x_seconds:
+        one: meno di un secondo
+        other: meno di %{count} secondi
+      over_x_years:
+        one: oltre un anno
+        other: oltre %{count} anni
+      x_days:
+        one: 1 giorno
+        other: "%{count} giorni"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minuti"
+      x_months:
+        one: 1 mese
+        other: "%{count} mesi"
+      x_years:
+        one: 1 anno
+        other: "%{count} anni"
+      x_seconds:
+        one: 1 secondo
+        other: "%{count} secondi"

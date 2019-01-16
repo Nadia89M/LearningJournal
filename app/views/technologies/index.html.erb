@@ -1,12 +1,12 @@
-<h1 align="center">Technologies</h1>
+<h1 align="center"><%= t("technologies.index.title") %></h1>
 <table class="elem-container">
   <tbody class="elem-body">
     <% @technologies.each do |technology| %>
       <tr class="row-elem">
         <td class="elem-name"><i class="fas fa-check check"></i>  <%= technology.name %></td>
         <td class="elem-action">
-        <%= link_to 'Show', technology %>
-        <%= link_to 'Edit', edit_technology_path(technology) %>
+        <%= link_to t("technologies.index.show"), technology %>
+        <%= link_to t("technologies.index.edit"), edit_technology_path(technology) %>
         </td>
       </tr>
     <% end %>
@@ -15,7 +15,7 @@
 <br>
 <br>
 <div class="elem-btn">
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t("technologies.index.new", :default => t("helpers.links.new")),
     new_technology_path,
     :class => 'btn btn-primary' %>
 </div>

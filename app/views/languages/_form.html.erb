@@ -4,16 +4,16 @@
     role: "form"}) do |f| %>
     <div class="form-group">
       <div class="control-label col-md-2 form-elem">
-        <%= f.label :name %>
+        <%= f.label t("languages.form.name") %>
       </div>
       <div class="col-md-8">
         <%= f.text_field :name, class: "form-control",
-        placeholder: "Enter Language", autofocus: true %>
+        placeholder: t("languages.form.placeholder"), autofocus: true %>
       </div>
     </div>
     <div class="form-group">
       <div class="col-md-offset-2 col-md-10">
-        <%= f.submit(@language.new_record? ? "Add Language" : "Update Language",
+        <%= f.submit(@language.new_record? ? t("languages.form.add") : t("languages.form.update"),
         class: "btn btn-danger btn-lg") %>
       </div>
     </div>

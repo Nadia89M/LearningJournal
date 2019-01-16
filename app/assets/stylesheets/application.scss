@@ -60,7 +60,8 @@ h1 {
 }
 
 .table-container {
-  margin: 0 7.5%;
+  margin: 0 5%;
+  overflow-x: auto;
 }
 
 .new {
@@ -92,6 +93,12 @@ nav {
   &:hover {
     color: white !important;
   }
+}
+
+.flag img{
+  padding-left: 2rem;
+  height: 2rem;
+  width: auto;
 }
 
 //Index Page - Projects
