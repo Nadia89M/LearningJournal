@@ -51,16 +51,16 @@
       <button class="btn btn-dark my-2 my-sm-0" type="submit" id="search-btn"><%= t("navbar.navbar-search") %></button>
     </form>
     <% end %>
+    
     <% if I18n.locale == :it %>
     <form class="form-inline my-2 my-lg-0" >
       <% en_uri = request.fullpath.gsub('/it', '/en') %>
-      <% good_link = en_uri[0, 3] == '/en' ? en_uri : root_path %>
-      <%= link_to image_tag("uk.png"), good_link, class: "flag" %>
+      <%= link_to image_tag("uk.png"), en_uri, class: "flag" %>
     <% else %>
       <% it_uri = request.fullpath.gsub('/en', '/it') %>
-      <% good_link = it_uri[0, 3] == '/it' ? it_uri : root_path %>
-      <%= link_to image_tag("it.png"), good_link, class: "flag"  %>
+      <%= link_to image_tag("it.png"), it_uri, class: "flag"  %>
     </form>
     <% end %>
+    
   </div>
 </nav>
