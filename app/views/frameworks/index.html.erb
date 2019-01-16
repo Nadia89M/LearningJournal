@@ -1,12 +1,12 @@
-<h1 align="center">Frameworks</h1>
+<h1 align="center"><%= t("frameworks.index.title") %></h1>
 <table class="elem-container">
   <tbody class="elem-body">
     <% @frameworks.each do |framework| %>
       <tr class="row-elem">
         <td class="elem-name"><i class="fas fa-check check"></i>  <%= framework.name %></td>
         <td class="elem-action">
-        <%= link_to 'Show', framework %>
-        <%= link_to 'Edit', edit_framework_path(framework) %>
+        <%= link_to t("frameworks.index.show") , framework %>
+        <%= link_to t("frameworks.index.edit") , edit_framework_path(framework) %>
         </td>
       </tr>
     <% end %>
@@ -15,7 +15,7 @@
 <br>
 <br>
 <div class="elem-btn">
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t("frameworks.index.new", :default => t("helpers.links.new")),
     new_framework_path,
     :class => 'btn btn-primary' %>
 </div>

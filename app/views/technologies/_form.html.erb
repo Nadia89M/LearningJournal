@@ -4,16 +4,16 @@
     role: "form"}) do |f| %>
     <div class="form-group">
       <div class="control-label col-md-2 form-elem">
-        <%= f.label :name %>
+        <%= f.label t("technologies.form.name") %>
       </div>
       <div class="col-md-8">
         <%= f.text_field :name, class: "form-control",
-        placeholder: "Enter Technology", autofocus: true %>
+        placeholder: t("technologies.form.placeholder"), autofocus: true %>
       </div>
     </div>
     <div class="form-group">
       <div class="col-md-offset-2 col-md-10">
-        <%= f.submit(@technology.new_record? ? "Add Technology" : "Update Technology",
+        <%= f.submit(@technology.new_record? ? t("technologies.form.add") : t("technologies.form.update"),
         class: "btn btn-danger btn-lg") %>
       </div>
     </div>

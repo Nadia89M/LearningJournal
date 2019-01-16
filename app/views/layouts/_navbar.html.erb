@@ -7,13 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%=link_to "Resources", resources_path, class: "nav-link"%>
+        <%=link_to t("navbar.navbar-link-resources"), resources_path, class: "nav-link"%>
       </li>
       <li class="nav-item">
-        <%=link_to "Projects", projects_path, class: "nav-link"%>
+        <%=link_to t("navbar.navbar-link-projects"), projects_path, class: "nav-link"%>
       </li>
       <li class="nav-item dropdown">
-        <%=link_to "Languages", languages_path, class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", dataToggle: "dropdown", ariaHaspopup: "true", ariaExpanded: "false"  %>
+        <%=link_to t("navbar.navbar-link-languages"), languages_path, class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", dataToggle: "dropdown", ariaHaspopup: "true", ariaExpanded: "false"  %>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <% Language.all.each do |language| %>
         <%= link_to language.name.capitalize, language_path(language), class: "dropdown-item" %>
@@ -21,7 +21,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <%=link_to "Technologies", technologies_path, class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", dataToggle: "dropdown", ariaHaspopup: "true", ariaExpanded: "false"  %>
+        <%=link_to t("navbar.navbar-link-technologies"), technologies_path, class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", dataToggle: "dropdown", ariaHaspopup: "true", ariaExpanded: "false"  %>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <% Technology.all.each do |technology| %>
         <%= link_to technology.name.capitalize, technology_path(technology), class: "dropdown-item" %>
@@ -29,7 +29,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <%=link_to "Frameworks", frameworks_path, class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", dataToggle: "dropdown", ariaHaspopup: "true", ariaExpanded: "false"  %>
+        <%=link_to t("navbar.navbar-link-frameworks"), frameworks_path, class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", dataToggle: "dropdown", ariaHaspopup: "true", ariaExpanded: "false"  %>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <% Framework.all.each do |framework| %>
         <%= link_to framework.name.capitalize, framework_path(framework), class: "dropdown-item" %>
@@ -37,7 +37,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <%=link_to "DBs", dbs_path, class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", dataToggle: "dropdown", ariaHaspopup: "true", ariaExpanded: "false"  %>
+        <%=link_to t("navbar.navbar-link-dbs"), dbs_path, class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", dataToggle: "dropdown", ariaHaspopup: "true", ariaExpanded: "false"  %>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
         <% Db.all.each do |db| %>
         <%= link_to db.name.capitalize, db_path(db), class: "dropdown-item" %>
@@ -47,8 +47,8 @@
     </ul>
     <% if current_page?(resources_path) || current_page?(root_path)%>
     <form class="form-inline my-2 my-lg-0" >
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search-item">
-      <button class="btn btn-dark my-2 my-sm-0" type="submit" id="search-btn">Search</button>
+      <input class="form-control mr-sm-2" type="search" placeholder = <%= t("navbar.navbar-search") %> aria-label="Search" id="search-item">
+      <button class="btn btn-dark my-2 my-sm-0" type="submit" id="search-btn"><%= t("navbar.navbar-search") %></button>
     </form>
     <% end %>
   </div>

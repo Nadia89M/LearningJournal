@@ -4,22 +4,22 @@
     role: "form"}) do |f| %>
     <div class="form-group">
       <div class="control-label col-md-2 form-elem">
-        <%= f.label :name %>
+        <%= f.label t("frameworks.form.name")%>
       </div>
       <div class="col-md-8">
         <%= f.text_field :name, class: "form-control",
-        placeholder: "Enter Framework", autofocus: true %>
+        placeholder: t("frameworks.form.placeholder"), autofocus: true %>
       </div>
     </div>
     <div class="form-group">
       <div class="col-md-offset-2 col-md-10">
-        <%= f.submit(@framework.new_record? ? "Add Framework" : "Update Framework",
+        <%= f.submit(@framework.new_record? ? t("frameworks.form.add") : t("frameworks.form.update"),
         class: "btn btn-danger btn-lg") %>
       </div>
     </div>
     <% end %>
     <div class="col-md-4 col-md-offset-4 colormatch">
-      [ <%= link_to "Framework listing",
+      [ <%= link_to t("frameworks.form.listing"),
       frameworks_path %> ]
     </div>
   </div>

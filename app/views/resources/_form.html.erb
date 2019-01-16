@@ -16,21 +16,21 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :name, :class => 'control-label col-lg-2' %>
+    <%= f.label t("resources.form.name"), :class => 'control-label col-lg-2' %>
   <div class="col-lg-10">
     <%= f.text_field :name, :class => 'form-control' %>
   </div>
     <%=f.error_span(:url) %>
   </div>
   <div class="form-group">
-    <%= f.label :url, :class => 'control-label col-lg-2' %>
+    <%= f.label t("resources.form.url"), :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :url, :class => 'form-control' %>
     </div>
     <%=f.error_span(:url) %>
   </div>
   <div class="form-group">
-    <%= f.label :memo, :class => 'control-label col-lg-2' %>
+    <%= f.label t("resources.form.memo"), :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_field :memo, :class => 'form-control' %>
     </div>
@@ -38,7 +38,7 @@
   </div>
   
   <div class="form-group">
-  <%= f.label :images, :class => 'control-label col-lg-2 ' %>
+  <%= f.label t("resources.form.images"), :class => 'control-label col-lg-2 ' %>
   <div class="col-lg-10">
   <%= f.file_field :images, multiple: true %><br>
   </div>
@@ -57,7 +57,7 @@
 </div>
 
   <div class="form-group">
-  <%= f.label :documents, :class => 'control-label col-lg-2' %>
+  <%= f.label t("resources.form.documents"), :class => 'control-label col-lg-2' %>
   <div class="col-lg-10">
   <%= f.file_field :documents, multiple: true %><br>
   </div>
@@ -77,7 +77,7 @@
 </div>
 
   <div class="form-group div-form">
-  <%= f.label :languages, :class => 'control-label col-lg-2 elem-label' %>
+  <%= f.label t("resources.form.languages"), :class => 'control-label col-lg-2 elem-label' %>
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :language_ids, 
@@ -89,7 +89,7 @@
 </div>
 
 <div class="form-group div-form">
-<%= f.label :technologies, :class => 'control-label col-lg-2 elem-label' %>
+<%= f.label t("resources.form.technologies"), :class => 'control-label col-lg-2 elem-label' %>
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :technology_ids, 
@@ -101,7 +101,7 @@
 </div>
 
 <div class="form-group div-form">
-  <%= f.label :frameworks, :class => 'control-label col-lg-2 elem-label' %>
+  <%= f.label t("resources.form.frameworks"), :class => 'control-label col-lg-2 elem-label' %>
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :framework_ids, 
@@ -113,7 +113,7 @@
 </div>
 
 <div class="form-group div-form">
-  <%= f.label :databases, :class => 'control-label col-lg-2 elem-label' %>
+  <%= f.label t("resources.form.dbs"), :class => 'control-label col-lg-2 elem-label' %>
   <div class="row">
     <div class="col-md-offset-2 col-md-8">
       <%= f.collection_check_boxes :db_ids, 
@@ -125,7 +125,7 @@
 </div>
 
 <div class="form-group project-id-elem">
-<%= f.label :project, :class => 'control-label col-lg-2' %>
+<%= f.label t("resources.form.project"), :class => 'control-label col-lg-2' %>
 <div class="col-lg-10">
   <%= f.collection_select :project_id, @projects, :id, :name, :include_blank => true, :class => 'form-control' %>
   </div>
@@ -134,8 +134,8 @@
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+      <%= f.submit(@resource.new_record? ? t("resources.form.add") : t("resources.form.update"), :class => 'btn btn-primary') %>
+      <%= link_to t("cancel", :default => t("helpers.links.cancel")),
                 resources_path, :class => 'btn btn-default' %>
     </div>
   </div>

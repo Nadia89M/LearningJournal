@@ -4,22 +4,22 @@
     role: "form"}) do |f| %>
     <div class="form-group">
       <div class="control-label col-md-2 form-elem">
-        <%= f.label :name%>
+        <%= f.label t("dbs.form.name")%>
       </div>
       <div class="col-md-8">
         <%= f.text_field :name, class: "form-control",
-        placeholder: "Enter DB", autofocus: true %>
+        placeholder: t("dbs.form.placeholder"), autofocus: true %>
       </div>
     </div>
     <div class="form-group">
       <div class="col-md-offset-2 col-md-10">
-        <%= f.submit(@db.new_record? ? "Add DB" : "Update DB",
+        <%= f.submit(@db.new_record? ? t("dbs.form.add") : t("dbs.form.update"),
         class: "btn btn-danger btn-lg") %>
       </div>
     </div>
     <% end %>
     <div class="col-md-4 col-md-offset-4 colormatch">
-      [ <%= link_to "DB listing",
+      [ <%= link_to t("dbs.form.listing"),
       dbs_path %> ]
     </div>
   </div>
