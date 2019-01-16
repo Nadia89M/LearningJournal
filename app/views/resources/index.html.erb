@@ -28,7 +28,7 @@
         <td class="resource-item"><%=link_to resource.name, resource.url, target: '_blank'%></td>
         <td><%= resource.memo %></td>
         <td><% resource.images.each do |image| %>
-          <%= image_tag image, class: "img-index" %> <br />
+          <%= link_to image.filename, rails_blob_path(image, disposition: "attachment") %><br />
         <% end %></td>
         <td><% resource.documents.each do |document| %>
           <%= link_to document.filename, rails_blob_path(document, disposition: "attachment") %><br />

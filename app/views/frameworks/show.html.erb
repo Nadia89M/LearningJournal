@@ -5,7 +5,7 @@
   <table class="elem-container">
     <tbody class="elem-body">
       <% @framework.resources.each do |resource| %>
-      <tr class="row-elem">
+      <tr class="show-row-elem">
         <td class="elem-name"><i class="far fa-check-square check"></i>  <span class="resources-list"><%= resource.name %></span></td>       
         <td class="elem-action">
           <%= link_to 'Show', resource %>
