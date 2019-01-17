@@ -40,7 +40,7 @@
   <div class="form-group">
   <%= f.label t("resources.form.images"), :class => 'control-label col-lg-2 ' %>
   <div class="col-lg-10">
-  <%= f.file_field :images, multiple: true %><br>
+  <%= f.file_field :images, multiple: true, direct_upload: true %><br>
   </div>
   <%=f.error_span(:images) %>
   </div>
