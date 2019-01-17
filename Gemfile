@@ -56,6 +56,8 @@ group :development, :test do
   gem 'sqlite3'
   #Rspec-rails is a testing framework for Rails.
   gem 'rspec-rails', '~> 3.8'
+  #is a fixtures replacement with a straightforward definition syntax.
+  gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
 end
 
 group :development do
