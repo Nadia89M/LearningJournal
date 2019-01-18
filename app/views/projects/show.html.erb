@@ -10,7 +10,7 @@
       <dt><strong><%= t("projects.show.description") %>:</strong></dt>
       <dd><%= @project.description %></dd>
       <dt><strong><%= t("projects.show.startdate") %>:</strong></dt>
-      <dd><%= @project.start_date.strftime("%d/%m/%Y") %></dd>
+      <dd><%= @project.start_date %></dd>
     </dl>
 
     <%= link_to t("projects.show.back", :default => t("helpers.links.back")),

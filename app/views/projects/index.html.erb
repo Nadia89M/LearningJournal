@@ -22,7 +22,7 @@
       <tr>
         <td class="project-name"><%= project.name %></td>
         <td><%= project.description %></td>
-        <td><%= project.start_date.strftime("%d/%m/%Y") %></td>
+        <td><%= project.start_date %></td>
         <td><%=time_ago_in_words(project.updated_at)%><%= t('projects.index.ago') %></td>
         <td>
           <%= link_to t("projects.index.show", :default => t("helpers.links.show")),
