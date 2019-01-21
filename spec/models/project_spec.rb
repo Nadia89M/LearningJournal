@@ -9,4 +9,9 @@ RSpec.describe Project, type: :model do
     project.valid?
     expect(project.errors[:name]).to include("can't be blank")
   end
+  it "is invalid without an empty string" do
+    project = FactoryBot.build(:project, name: "")
+    project.valid?
+    expect(project.errors[:name]).to include("can't be blank")
+  end
 end
