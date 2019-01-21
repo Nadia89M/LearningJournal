@@ -183,6 +183,11 @@ nav {
   color: #343a40;
 }
 
+@media (max-width: 992px) {
+  .flag img {
+    padding: 0;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
