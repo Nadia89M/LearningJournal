@@ -6,4 +6,5 @@ script:
 addons: 
   chrome: stable
   firefox: latest
-  
+cache:
+  bundler: true  
