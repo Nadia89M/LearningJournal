@@ -49,8 +49,4 @@ RSpec.describe Resource, type: :model do
     resource.valid?
     expect(resource).to be_valid
   end
-  it "generates associated data from a factory" do
-    resource = FactoryBot.create(:resource)
-    puts "This resource's project is #{resource.project.inspect}"
-  end
 end
