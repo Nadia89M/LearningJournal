@@ -1,12 +1,11 @@
 require "rails_helper"
 RSpec.feature "Showing a Language" do
-  before do
-    @language = FactoryBot.create(:language)
-  end 
+  let!(:language) { FactoryBot.create(:language) } 
+
   scenario "A user lists all languages" do
     visit "/languages"
     click_link "Show"
-    expect(page).to have_content(@language.name) 
-    expect(current_path).to eq("/en/languages/#{@language.id}")
+    expect(page).to have_content(language.name) 
+    expect(current_path).to eq("/en/languages/#{language.id}")
   end
 end

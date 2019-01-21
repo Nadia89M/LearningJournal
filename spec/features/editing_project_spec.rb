@@ -1,8 +1,6 @@
 require "rails_helper"
 RSpec.feature "Editing a Project" do
-    before do
-    @project = FactoryBot.create(:project)
-    end
+    let!(:project) { FactoryBot.create(:project) } 
 
     scenario "A user updates a project" do
         visit "/projects"
@@ -11,7 +9,7 @@ RSpec.feature "Editing a Project" do
         fill_in "name", with: "Updated Project" 
         fill_in "description", with: "Lorem Ipsum" 
         click_button "Update Project"
-        expect(page.current_path).to  eq("/en/projects/#{@project.id}")
+        expect(page.current_path).to  eq("/en/projects/#{project.id}")
     end
 
     scenario "A user fails to update a project" do 
@@ -22,6 +20,6 @@ RSpec.feature "Editing a Project" do
         fill_in "description", with: "Lorem Ipsum" 
         click_button "Update Project"
         expect(page).to have_content("Name can't be blank")
-        expect(current_path).to  eq("/en/projects/#{@project.id}")
+        expect(current_path).to  eq("/en/projects/#{project.id}")
     end
 end

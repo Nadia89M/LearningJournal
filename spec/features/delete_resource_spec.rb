@@ -1,8 +1,6 @@
 require "rails_helper"
 RSpec.feature "Deleting a Resource" do
-    before do
-        @resource = FactoryBot.create(:resource)
-    end 
+    let!(:resource) { FactoryBot.create(:resource) }  
     scenario "A user deletes a resource" do
         visit "/"
         click_link "Show"

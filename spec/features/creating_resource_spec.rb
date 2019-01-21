@@ -1,21 +1,20 @@
 require "rails_helper"
 
 RSpec.feature "Creating Resources" do 
-    before do 
-        @project = FactoryBot.create(:project)
-      end
+    let!(:project) { FactoryBot.create(:project) } 
+
     scenario "with valid name, memo, url and project_id" do
-    visit resources_path
-    expect {
-    click_link "New"
-    fill_in "name", with: "Test Resource"
-    fill_in "memo", with: "Trying out Capybara"
-    fill_in "url", with: "https://stackoverflow.com/"
-    select @project.name, from: "resource[project_id]"
-    click_button "Add Resource"
-    expect(page).to have_content "Resource"
-    expect(page).to have_content "Test Resource"
-    }.to change(Resource, :count).by(1)
+        visit resources_path
+        expect {
+        click_link "New"
+        fill_in "name", with: "Test Resource"
+        fill_in "memo", with: "Trying out Capybara"
+        fill_in "url", with: "https://stackoverflow.com/"
+        select project.name, from: "resource[project_id]"
+        click_button "Add Resource"
+        expect(page).to have_content "Resource"
+        expect(page).to have_content "Test Resource"
+        }.to change(Resource, :count).by(1)
     end
     scenario "without a name" do
         visit resources_path
@@ -24,7 +23,7 @@ RSpec.feature "Creating Resources" do
         fill_in "name", with: nil
         fill_in "memo", with: "Trying out Capybara"
         fill_in "url", with: "https://stackoverflow.com/"
-        select @project.name, from: "resource[project_id]"
+        select project.name, from: "resource[project_id]"
         click_button "Add Resource"
         expect(page).to have_content "New Resource"
         expect(page).to have_content "can't be blank"
@@ -37,7 +36,7 @@ RSpec.feature "Creating Resources" do
         fill_in "name", with: "Test Resource"
         fill_in "memo", with: nil
         fill_in "url", with: "https://stackoverflow.com/"
-        select @project.name, from: "resource[project_id]"
+        select project.name, from: "resource[project_id]"
         click_button "Add Resource"
         expect(page).to have_content "New Resource"
         expect(page).to have_content "can't be blank"
@@ -50,7 +49,7 @@ RSpec.feature "Creating Resources" do
         fill_in "name", with: "Test Resource"
         fill_in "memo", with: "Trying out Capybara"
         fill_in "url", with: nil
-        select @project.name, from: "resource[project_id]"
+        select project.name, from: "resource[project_id]"
         click_button "Add Resource"
         expect(page).to have_content "New Resource"
         expect(page).to have_content "can't be blank"
@@ -63,7 +62,7 @@ RSpec.feature "Creating Resources" do
         fill_in "name", with: "Test Resource"
         fill_in "memo", with: "memo"
         fill_in "url", with: "https://stackoverflow.com/"
-        select @project.name, from: "resource[project_id]"
+        select project.name, from: "resource[project_id]"
         click_button "Add Resource"
         expect(page).to have_content "New Resource"
         expect(page).to have_content "is too short (minimum is 5 characters)"
@@ -76,7 +75,7 @@ RSpec.feature "Creating Resources" do
         fill_in "name", with: "Test Resource"
         fill_in "memo", with: "Trying out Capybara"
         fill_in "url", with: "stackoverflow.com/"
-        select @project.name, from: "resource[project_id]"
+        select project.name, from: "resource[project_id]"
         click_button "Add Resource"
         expect(page).to have_content "New Resource"
         expect(page).to have_content "is invalid"

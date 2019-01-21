@@ -1,8 +1,6 @@
 require "rails_helper"
 RSpec.feature "Deleting a Project" do
-    before do
-        @project = FactoryBot.create(:project)
-    end 
+    let!(:project) { FactoryBot.create(:project) } 
     scenario "A user deletes a project" do
         visit "/projects"
         click_link "Show"
