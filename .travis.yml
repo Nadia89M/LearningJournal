@@ -1,4 +1,9 @@
 language: ruby
-rvm:
-  - 2.5.1
-  - 2.5.1p57
+before_script:
+  bundle exec rails db:create db:migrate
+script: 
+  bundle exec rspec
+addons: 
+  chrome: stable
+  firefox: latest
+  
