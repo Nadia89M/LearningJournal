@@ -54,6 +54,10 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  #Rspec-rails is a testing framework for Rails.
+  gem 'rspec-rails', '~> 3.8'
+  #is a fixtures replacement with a straightforward definition syntax.
+  gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
 end
 
 group :development do
@@ -68,6 +72,8 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  #Launchy is helper class for launching cross-platform applications.
+  gem 'launchy', '~> 2.4', '>= 2.4.3'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'

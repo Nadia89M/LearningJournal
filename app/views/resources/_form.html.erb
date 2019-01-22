@@ -18,21 +18,21 @@
   <div class="form-group">
     <%= f.label t("resources.form.name"), :class => 'control-label col-lg-2' %>
   <div class="col-lg-10">
-    <%= f.text_field :name, :class => 'form-control' %>
+    <%= f.text_field :name, :id => 'name', :class => 'form-control' %>
   </div>
     <%=f.error_span(:url) %>
   </div>
   <div class="form-group">
     <%= f.label t("resources.form.url"), :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :url, :class => 'form-control' %>
+      <%= f.text_field :url, :id => 'url', :class => 'form-control' %>
     </div>
     <%=f.error_span(:url) %>
   </div>
   <div class="form-group">
     <%= f.label t("resources.form.memo"), :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :memo, :class => 'form-control' %>
+      <%= f.text_field :memo, :id => 'memo', :class => 'form-control' %>
     </div>
     <%=f.error_span(:memo) %>
   </div>
@@ -40,7 +40,7 @@
   <div class="form-group">
   <%= f.label t("resources.form.images"), :class => 'control-label col-lg-2 ' %>
   <div class="col-lg-10">
-  <%= f.file_field :images, multiple: true %><br>
+  <%= f.file_field :images, multiple: true, direct_upload: true %><br>
   </div>
   <%=f.error_span(:images) %>
   </div>
