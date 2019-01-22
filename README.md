@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Nadia89M/LearningJournal.svg?branch=master)](https://travis-ci.com/Nadia89M/LearningJournal)
+
 # Programming Learning Journal 
  This is a Ruby on Rails 5 application that will help you keep track of your progress as you gain experience with a variety of languages, libraries, frameworks and technologies.
 
