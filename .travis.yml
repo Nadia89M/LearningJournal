@@ -1,0 +1,10 @@
+language: ruby
+before_script:
+  bundle exec rails db:create db:migrate
+script: 
+  bundle exec rspec
+addons: 
+  chrome: stable
+  firefox: latest
+cache:
+  bundler: true  
